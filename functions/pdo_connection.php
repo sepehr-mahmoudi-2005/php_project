@@ -1,6 +1,6 @@
 <?php
 
-$pdo = null;
+global $pdo;
 
 list($host, $dbname, $username, $password) = [
     'localhost',

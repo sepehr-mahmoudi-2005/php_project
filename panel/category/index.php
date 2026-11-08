@@ -42,6 +42,8 @@ require_once '../../functions/pdo_connection.php';
                             </thead>
                             <tbody>
                                 <?php
+                                global $pdo;
+
                                 $query = "SELECT * FROM `categories`";
                                 $statement = $pdo->prepare($query);
                                 $statement->execute();
