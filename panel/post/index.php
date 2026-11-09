@@ -51,7 +51,7 @@ global $pdo;
                             </thead>
                             <tbody>
                                 <?php
-                                $query = "SELECT * FROM posts";
+                                $query = "SELECT p.*, c.name category_name FROM posts p LEFT JOIN categories c ON p.cat_id=c.id";
                                 $statement = $pdo->prepare($query);
                                 $statement->execute();
                                 $posts = $statement->fetchAll();
@@ -62,8 +62,8 @@ global $pdo;
                                         <td><?= $post->id ?></td>
                                         <td><img style="width: 90px;" src="<?= asset($post->image) ?>"></td>
                                         <td><?= $post->title ?></td>
-                                        <td><?= $post->cat_id ?></td>
-                                        <td><?= substr($post->body, 0, 30) ?>...</td>
+                                        <td><?= $post->category_name ?></td>
+                                        <td><?= substr($post->body, 0, 30) . ' ...' ?></td>
                                         <td>
                                             <?php if ($post->status === 1): ?>
                                                 <span class="text-success">enable</span>
