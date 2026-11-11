@@ -4,7 +4,6 @@ require_once '../../functions/helpers.php';
 
 global $pdo;
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
