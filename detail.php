@@ -8,9 +8,13 @@ if (
     redirect('index.php');
 }
 
-$query = "SELECT *, c.id category_id, c.name category_name FROM posts p 
+$query = "SELECT 
+    p.*, 
+    c.id category_id, 
+    c.name category_name 
+FROM posts p 
 JOIN categories c
-ON p.cat_id = c.id
+    ON p.cat_id = c.id
 WHERE p.status=1 AND p.id=?;
 ";
 
