@@ -1,7 +1,7 @@
 <?php
-require_once "../../functions/helpers.php";
-require_once '../../functions/pdo_connection.php';
+require_once '../autoload.php';
 
+global $pdo;
 
 if (filter_input(INPUT_POST, 'name') && $_POST['name'] !== '') {
     $query = "INSERT INTO categories SET name=?, created_at=NOW();";
