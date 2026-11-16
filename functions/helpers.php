@@ -1,8 +1,5 @@
 <?php
 
-## Config
-const BASE_URL = "http://localhost/php_project/";
-
 function sanitize_base_url(string $baseUrl)
 {
     return rtrim($baseUrl, '/ ') . '/';

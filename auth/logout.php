@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require_once '../functions/helpers.php';
+require_once '../autoload.php';
 
 session_destroy();
+
 redirect('auth/login.php');

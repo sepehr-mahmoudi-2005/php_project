@@ -1,6 +1,6 @@
 <?php
 require_once 'autoload.php';
-global $pdo;
+$pdo = connect(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
 ?>
 
 <!DOCTYPE html>

@@ -1,8 +1,6 @@
 <?php
-require_once '../functions/pdo_connection.php';
-require_once '../functions/helpers.php';
-
-global $pdo;
+require_once '../autoload.php';
+$pdo = connect(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
 
 $error = '';
 

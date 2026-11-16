@@ -1,7 +1,7 @@
 <?php
 require_once '../autoload.php';
+$pdo = connect(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
 
-global $pdo;
 
 if (filter_input(INPUT_POST, 'name') && $_POST['name'] !== '') {
     $query = "INSERT INTO categories SET name=?, created_at=NOW();";

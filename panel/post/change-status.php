@@ -1,7 +1,6 @@
 <?php
 require_once '../autoload.php';
-
-global $pdo;
+$pdo = connect(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
 
 if (filter_has_var(INPUT_GET, 'post_id') && $_GET['post_id'] !== '') {
 

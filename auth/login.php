@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-require_once '../functions/pdo_connection.php';
-require_once '../functions/helpers.php';
+require_once '../autoload.php';
 
-global $pdo;
+$pdo = connect(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
 
 if (isset($_SESSION['user'])) {
     unset($_SESSION['user']);

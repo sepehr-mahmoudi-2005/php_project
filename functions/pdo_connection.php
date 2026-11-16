@@ -1,29 +1,25 @@
 <?php
 
-global $pdo;
-
-list($host, $dbname, $username, $password) = [
-    'localhost',
-    'php_project',
-    'root',
-    ''
-];
-
-$options = [
+const PDO_OPTIONS = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
 ];
 
-try {
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname",
-        $username,
-        $password,
-        $options
-    );
-
-    return $pdo;
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    exit;
+function connect(
+    string $host,
+    string $dbname,
+    string $username,
+    string $password
+): PDO {
+    try {
+        return new PDO(
+            "mysql:host=$host;dbname=$dbname",
+            $username,
+            $password,
+            PDO_OPTIONS
+        );
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+        exit;
+    }
 }
